@@ -96,15 +96,11 @@ NOTE: you can assume each input will be the same length
 */
 
 
-const interleave = (arr1, arr2) => {
-    let arr = [];
-    for(let i = 0; i < arr1.length; i++) {
-        arr.push(arr1[i]);
-        arr.push(arr2[i]);
-    }
-    return arr;
-}
 
+
+const interleave = (arr1, arr2) => arr1.reduce((acc, curr, i) => acc.concat(curr, arr2[i]), []);
+
+ 
 
 /*
 ----------------------------------------
