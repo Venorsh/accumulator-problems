@@ -30,11 +30,7 @@ For example, the tests require that to complete this challenge, your function mu
 results on the index page in the browser.
 */
 
-
-
-
-
-
+const sum = nums => nums.length > 0 ? nums.reduce((acc, curr) => acc + curr) : 0;
 
 
 
@@ -48,13 +44,12 @@ Write function named doubleLetters that will take a string and double every lett
 Example: if you pass it "abc" then it should return "aabbcc"
 */
 
-
-
-
-
-
-
-
+const doubleLetters = string => {
+    let chars = string.split("");
+    let finalString = "";
+    chars.forEach(char => finalString += char + char);
+    return finalString;
+} 
 
 
 /*
@@ -67,12 +62,7 @@ Write function named doubleNumbers that will take an array of numbers and return
 Example: if you pass it [1,2,3] then it should return [2,4,6]
 */
 
-
-
-
-
-
-
+const doubleNumbers = nums => nums.map(num => num * 2);
 
 
 /*
@@ -89,12 +79,7 @@ Examples:
 - if you call multiplyNumbers([1,2,3], 5) you'd get [5,10,15]
 */
 
-
-
-
-
-
-
+const multiplyNumbers = (nums, multiplier) => nums.map(num => num * multiplier);
 
 
 
@@ -111,13 +96,14 @@ NOTE: you can assume each input will be the same length
 */
 
 
-
-
-
-
-
-
-
+const interleave = (arr1, arr2) => {
+    let arr = [];
+    for(let i = 0; i < arr1.length; i++) {
+        arr.push(arr1[i]);
+        arr.push(arr2[i]);
+    }
+    return arr;
+}
 
 
 /*
@@ -130,11 +116,13 @@ Write function named createRange that will take a number and a default value and
 Example: if you pass it 4 and "Hello" then it should return ["Hello", "Hello", "Hello", "Hello"]
 */
 
-
-
-
-
-
+const createRange = (num, val) => {
+    let arr = [];
+    for(let i = 0; i < num; i++) {
+        arr.push(val);
+    }
+    return arr;
+}
 
 
 /*
