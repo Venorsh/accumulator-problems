@@ -133,7 +133,15 @@ Example:
 If you pass it ["quick", "brown", "fox"] then it should return { "quick": 0, "brown": 1, "fox": 2 }
 */
 
+const flipArray = arr => {
+    let obj = {};
+    arr.forEach((val, i) => {
+        obj[val] = i;
+    });
+    return obj;
+}
 
+// const flipArray = arr => arr.reduce((acc, curr, i) => acc[curr] = i , {});
 
 
 
@@ -173,14 +181,13 @@ Example:
 If you pass it "hello" then it should return "olleh"
 */
 
-
-
-
-
-
-
-
-
+const reverseString = string => {
+    let reversedString = "";
+    for(let i = string.length - 1; i >= 0; i--) {
+        reversedString += string[i];
+    }
+    return reversedString;
+}
 
 
 
@@ -198,7 +205,7 @@ If you pass it "yay" then it should return false because it's odd
 If you pass it "heehaw" then it should return false because "hee" doesn't equal "haw"
 */
 
-
+const repeats = string => string.length%2 !== 0 ? false : string.split("").find((char, i) => char !== string[i + string.length/2]);
 
 
 
