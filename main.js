@@ -8,10 +8,12 @@ Solution: This one has already been completed for you.
 
 */
 
-function test() {
+/* function test() {
  var string ="This Works!";
  return string;
-}
+} */
+
+const test = () => "This Works!";
 
 
 
@@ -44,12 +46,14 @@ Write function named doubleLetters that will take a string and double every lett
 Example: if you pass it "abc" then it should return "aabbcc"
 */
 
-const doubleLetters = string => {
+/* const doubleLetter = string => {
     let chars = string.split("");
     let finalString = "";
     chars.forEach(char => finalString += char + char);
     return finalString;
-} 
+} */
+
+const doubleLetters = string => string.split("").reduce((acc, curr) => acc + curr + curr, "");
 
 
 /*
@@ -147,7 +151,6 @@ const flipArray = arr => arr.reduce((acc, curr, i) => Object.assign(acc, {[curr]
 
 
 
-
 /*
 ----------------------------------------
 CHALLENGE
@@ -161,7 +164,7 @@ If you pass it [[2014, "Horse"], [2015, "Sheep"]] then it should return { 2014: 
 
 */
 
-
+const arraysToObject = arr => arr.reduce((acc, curr) => Object.assign(acc, {[curr[0]] : curr[1]}), {});
 
 
 
