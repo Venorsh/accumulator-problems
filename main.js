@@ -133,15 +133,15 @@ Example:
 If you pass it ["quick", "brown", "fox"] then it should return { "quick": 0, "brown": 1, "fox": 2 }
 */
 
-const flipArray = arr => {
+/* const flipArrays = arr => {
     let obj = {};
     arr.forEach((val, i) => {
         obj[val] = i;
     });
     return obj;
-}
+} */
 
-// const flipArray = arr => arr.reduce((acc, curr, i) => acc[curr] = i , {});
+const flipArray = arr => arr.reduce((acc, curr, i) => Object.assign(acc, {[curr]:i}) , {});
 
 
 
